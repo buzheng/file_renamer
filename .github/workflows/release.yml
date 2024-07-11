@@ -3,28 +3,28 @@ name: Wails build
 on:
   push:
     tags:
-    # Match any new tag starts with 'v*'
+      # Match any new tag starts with 'v*'
       - 'v*'
 
 env:
   # Necessary for most environments as build failure can occur due to OOM issues
-  NODE_OPTIONS: "--max-old-space-size=4096"
+  NODE_OPTIONS: '--max-old-space-size=4096'
 
 jobs:
   build:
     strategy:
-    # Failure in one platform build won't impact the others
+      # Failure in one platform build won't impact the others
       fail-fast: false
       matrix:
         build:
           - name: 'File Renamer'
-            platform:  'linux/amd64'
+            platform: 'linux/amd64'
             os: 'ubuntu-latest'
           - name: 'File Renamer'
-            platform:  'windows/amd64'
+            platform: 'windows/amd64'
             os: 'windows-latest'
           - name: 'File Renamer'
-            platform:  'darwin/universal'
+            platform: 'darwin/universal'
             os: 'macos-latest'
 
     runs-on: ${{ matrix.build.os }}
@@ -42,3 +42,4 @@ jobs:
           build-platform: ${{ matrix.build.platform }}
           package: true
           go-version: '1.22'
+          node-version: 'lastest'
