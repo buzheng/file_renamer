@@ -1,0 +1,6 @@
+{
+  "prettier.prettierPath": "./frontend/node_modules/prettier",
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "prettier.withNodeModules": true
+}

@@ -1,0 +1,43 @@
+<div class="flex items-center h-12 whitespace-nowrap">
+  <div
+    class="flex-1 overflow-hidden pl-4 h-full"
+    style="--wails-draggable: drag"
+    (dblclick)="toggleMaximize()"
+  >
+    <div class="flex items-center gap-2 h-full">
+      <div class="h-6 w-6 min-w-6 bg-[url('/favicon.ico')] bg-contain bg-no-repeat"></div>
+      <h1 class="text-lg leading-none font-medium">File Renamer</h1>
+    </div>
+  </div>
+  <div class="pr-2">
+    @if (isFullscreen) {
+      <p-button text="false" plain="true" label="Exit Fullscreen" (click)="fullscreen()" />
+    } @else {
+      <p-button text="true" plain="true" [icon]="themeIcon" (click)="toggleTheme()" />
+      <p-button
+        [text]="isAlwaysOnTop ? false : true"
+        plain="true"
+        icon="pi pi-thumbtack"
+        pTooltip="Always on Top"
+        tooltipPosition="bottom"
+        (click)="setAlwaysOnTop()"
+      />
+      <p-button
+        text="true"
+        plain="true"
+        icon="pi pi-expand"
+        pTooltip="Fullscreen"
+        tooltipPosition="bottom"
+        (click)="fullscreen()"
+      />
+      <p-button text="true" plain="true" icon="pi pi-minus" (click)="minimize()" />
+      <p-button
+        text="true"
+        plain="true"
+        icon="pi pi-window-{{ isMaximized ? 'minimize' : 'maximize' }}"
+        (click)="toggleMaximize()"
+      />
+      <p-button text="true" plain="true" icon="pi pi-times" severity="danger" (click)="quit()" />
+    }
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="flex flex-col h-full">
+  <div class="flex py-1 x-toolbar-border-b">
+    <p-button
+      [text]="true"
+      plain="true"
+      label="Add Files"
+      icon="pi pi-file-plus"
+      severity="contrast"
+      (click)="pickFiles()"
+      class="whitespace-nowrap"
+    />
+    <p-button
+      [text]="true"
+      plain="true"
+      label="Add Folder"
+      icon="pi pi-folder-plus"
+      severity="contrast"
+      class="whitespace-nowrap"
+      (click)="pickFolder()"
+    />
+    <p-button
+      [text]="true"
+      plain="true"
+      label="Remove"
+      icon="pi pi-trash"
+      severity="contrast"
+      [disabled]="selectedFiles.length === 0"
+      (click)="removeSelectedFiles()"
+    />
+    <p-button
+      [text]="true"
+      plain="true"
+      label="Rename"
+      icon="pi pi-check"
+      severity="contrast"
+      [disabled]="!canRename"
+      (click)="renameFiles()"
+    />
+  </div>
+  <div class="grow overflow-auto">
+    <p-table [value]="files" [(selection)]="selectedFiles" scrollable="true" scrollHeight="flex">
+      <ng-template pTemplate="header">
+        <tr>
+          <th class="w-4 text-right"><p-tableHeaderCheckbox /></th>
+          <th>Filename</th>
+          <th>New Filename</th>
+          <th>Result</th>
+          @if (rules.length > 1) {
+            @for (rule of rules; track $index) {
+              <th>Rule {{ $index + 1 }}</th>
+            }
+          }
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-file let-index="rowIndex">
+        <tr [pReorderableRow]="index">
+          <td>
+            <span class="pi pi-bars" pReorderableRowHandle></span>
+            <p-tableCheckbox [value]="file" class="ml-4" />
+          </td>
+          <td class="whitespace-pre">{{ file.filename }}</td>
+          <td
+            class="whitespace-pre"
+            [class.text-blue-600]="isPending(file)"
+            [class.text-green-600]="isSuccess(file)"
+            [class.text-red-500]="isError(file)"
+          >
+            {{ file.newFilename }}
+          </td>
+          <td>{{ file.result }}</td>
+          @if (file.ruleResults.length > 1) {
+            @for (result of file.ruleResults; track $index) {
+              <td>
+                <span class="whitespace-pre">{{ result }}</span>
+              </td>
+            }
+          }
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

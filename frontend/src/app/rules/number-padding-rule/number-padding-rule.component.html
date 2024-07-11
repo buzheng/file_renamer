@@ -1,0 +1,43 @@
+<div class="space-y-6 w-80">
+  <div class="flex gap-2 items-center p-fluid">
+    <label for="padding" class="w-24">Length</label>
+    <div class="w-48">
+      <p-inputNumber
+        [(ngModel)]="config.length"
+        showButtons
+        min="0"
+        inputId="padding"
+        class="!w-full"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-3">
+    @for (item of whichOptions; track $index) {
+      <div class="flex gap-4 items-center w-36">
+        <p-radioButton name="caseType" [(ngModel)]="config.which" [value]="item" [inputId]="item" />
+        <label for="{{ item }}">{{ item }}</label>
+      </div>
+    }
+  </div>
+
+  <div class="flex gap-4 items-center">
+    <p-checkbox
+      name="includeExtension"
+      [(ngModel)]="config.isRightPadding"
+      [binary]="true"
+      inputId="includeExtension"
+    />
+    <label for="includeExtension">Right Padding</label>
+  </div>
+
+  <div class="flex gap-4 items-center">
+    <p-checkbox
+      name="includeExtension"
+      [(ngModel)]="config.includeExtension"
+      [binary]="true"
+      inputId="includeExtension"
+    />
+    <label for="includeExtension">Include extensions</label>
+  </div>
+</div>

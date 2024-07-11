@@ -1,0 +1,46 @@
+<div class="flex flex-row gap-4 w-full">
+  <div class="space-y-2 w-80">
+    @for (item of removeTypes; track $index) {
+      <div class="flex gap-4 items-center p-fluid">
+        <p-radioButton
+          name="removeType"
+          [(ngModel)]="config.type"
+          [value]="item"
+          [inputId]="item"
+        />
+        <label for="{{ item }}">{{ item }}</label>
+        @if (item === 'CustomCharacters' && config.type === 'CustomCharacters') {
+          <input pInputText [(ngModel)]="config.customCharacters" />
+        } @else if (item === 'Text' && config.type === 'Text') {
+          <input pInputText [(ngModel)]="config.text" />
+        }
+      </div>
+    }
+  </div>
+
+  <div class="space-y-6">
+    <div class="space-y-2">
+      @for (item of removeWheres; track $index) {
+        <div class="flex gap-4 items-center p-fluid">
+          <p-radioButton
+            name="removeWhere"
+            [(ngModel)]="config.where"
+            [value]="item"
+            inputId="removeWhere_{{ item }}"
+          />
+          <label for="removeWhere_{{ item }}">{{ item }}</label>
+        </div>
+      }
+    </div>
+
+    <div class="flex gap-4 items-center">
+      <p-checkbox
+        name="includeExtension"
+        [(ngModel)]="config.includeExtension"
+        [binary]="true"
+        inputId="includeExtension"
+      />
+      <label for="includeExtension">Include extensions</label>
+    </div>
+  </div>
+</div>

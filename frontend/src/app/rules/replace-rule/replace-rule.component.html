@@ -1,0 +1,60 @@
+<div class="space-y-6">
+  <div class="space-y-2">
+    <div class="flex gap-2 items-center">
+      <label for="from" class="w-10">From</label>
+      <input type="text" id="from" pInputText [(ngModel)]="config.from" />
+    </div>
+    <div class="flex gap-2 items-center">
+      <label for="to" class="w-10">To</label>
+      <input
+        type="text"
+        id="to"
+        pInputText
+        [(ngModel)]="config.to"
+        [pKeyFilter]="invalidFilenameChars"
+      />
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <div class="flex gap-4">
+      <p-checkbox
+        name="caseSensitive"
+        [(ngModel)]="config.caseSensitive"
+        [binary]="true"
+        inputId="caseSensitive"
+      />
+      <label for="caseSensitive">Case Sensitive</label>
+    </div>
+    <div class="flex gap-4">
+      <p-checkbox name="isRegex" [(ngModel)]="config.isRegex" [binary]="true" inputId="isRegex" />
+      <label for="isRegex">Regular Expression</label>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    @for (item of replaceTypes; track $index) {
+      <div class="flex gap-4 items-center p-fluid">
+        <p-radioButton
+          name="insertType"
+          [(ngModel)]="config.type"
+          [value]="item"
+          [inputId]="item"
+        />
+        <label for="{{ item }}">Replace {{ item }}</label>
+      </div>
+    }
+  </div>
+
+  <div class="space-y-2">
+    <div class="flex gap-4">
+      <p-checkbox
+        name="includeExtension"
+        [(ngModel)]="config.includeExtension"
+        [binary]="true"
+        inputId="includeExtension"
+      />
+      <label for="includeExtension">Include extensions</label>
+    </div>
+  </div>
+</div>

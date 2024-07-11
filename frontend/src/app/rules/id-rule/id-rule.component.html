@@ -1,0 +1,71 @@
+<div class="space-y-6 w-96">
+  <div class="space-y-3">
+    @for (item of idCreators; track $index) {
+      <div class="flex gap-4 items-center p-fluid">
+        <p-radioButton
+          name="insertType"
+          [(ngModel)]="config.creator"
+          [value]="item"
+          [inputId]="item"
+        />
+        <label for="{{ item }}">{{ item }}</label>
+        @if (item === 'Counter' && config.creator === 'Counter') {
+          <div class="w-24">
+            <p-inputNumber
+              [(ngModel)]="config.counterLength"
+              showButtons
+              min="1"
+              class="!w-full"
+              pTooltip="The length to pad to"
+            />
+          </div>
+        } @else if (item === 'NanoID' && config.creator === 'NanoID') {
+          <div class="w-24">
+            <p-inputNumber
+              [(ngModel)]="config.randomLength"
+              showButtons
+              min="0"
+              class="!w-full"
+              pTooltip="The length of the ID"
+            />
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="space-y-3">
+    @for (item of idWheres; track $index) {
+      <div class="flex gap-4 items-center p-fluid">
+        <p-radioButton
+          name="insertType"
+          [(ngModel)]="config.where"
+          [value]="item"
+          [inputId]="item"
+        />
+        <label for="{{ item }}">{{ item }}</label>
+        @if (item === 'Position' && config.where === 'Position') {
+          <div class="w-24">
+            <p-inputNumber [(ngModel)]="config.position" showButtons min="0" class="!w-full" />
+          </div>
+        } @else if (item === 'BeforeText' && config.where === 'BeforeText') {
+          <input type="text" pInputText [(ngModel)]="config.beforeText" />
+        } @else if (item === 'AfterText' && config.where === 'AfterText') {
+          <input type="text" pInputText [(ngModel)]="config.afterText" />
+        }
+      </div>
+    }
+  </div>
+
+  <div class="flex gap-2 items-center">
+    <label for="separator">Separator</label>
+    <input
+      type="text"
+      id="separator"
+      pInputText
+      [(ngModel)]="config.separator"
+      [pKeyFilter]="invalidFilenameChars"
+      class="w-full"
+    />
+  </div>
+</div>

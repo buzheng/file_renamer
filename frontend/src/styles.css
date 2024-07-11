@@ -1,0 +1,30 @@
+@import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+html {
+  @apply text-black bg-stone-100 dark:text-white dark:bg-black;
+  @apply select-none;
+  @apply text-sm;
+}
+
+body {
+  @apply overflow-hidden;
+}
+
+[ng-reflect-disabled='true'],
+[ng-reflect-disabled='true'] * {
+  @apply !cursor-not-allowed !pointer-events-none;
+}
+
+.x-toolbar-border-b {
+  @apply border-b dark:border-black;
+}

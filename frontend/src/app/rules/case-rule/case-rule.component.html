@@ -1,0 +1,24 @@
+<div class="space-y-6">
+  <div class="space-y-3">
+    @for (item of caseTypes; track $index) {
+      <div class="flex gap-4 items-center">
+        <p-radioButton
+          name="caseType"
+          [(ngModel)]="config.caseType"
+          [value]="item"
+          [inputId]="item"
+        />
+        <label for="{{ item }}">{{ item }}</label>
+      </div>
+    }
+  </div>
+  <div class="flex gap-4 items-center">
+    <p-checkbox
+      name="includeExtension"
+      [(ngModel)]="config.includeExtension"
+      [binary]="true"
+      inputId="includeExtension"
+    />
+    <label for="includeExtension">Include extensions</label>
+  </div>
+</div>
