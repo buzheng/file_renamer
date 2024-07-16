@@ -1,7 +1,7 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "file_renamer",
-  "outputfilename": "File Renamer",
+  "name": "FileRenamer",
+  "outputfilename": "FileRenamer",
   "frontend:build": "npx ng build",
   "frontend:install": "npm install",
   "frontend:dev:watcher": "npx ng serve --port 4800",
