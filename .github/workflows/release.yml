@@ -19,11 +19,9 @@ jobs:
           - name: 'FileRenamer'
             platform: 'linux/amd64'
             os: 'ubuntu-latest'
-            nsis: false
           - name: 'FileRenamer'
             platform: 'windows/amd64'
             os: 'windows-latest'
-            nsis: true
           - name: 'FileRenamer'
             platform: 'windows/amd64'
             os: 'windows-latest'
@@ -31,7 +29,6 @@ jobs:
           - name: 'FileRenamer'
             platform: 'darwin/universal'
             os: 'macos-latest'
-            nsis: false
 
     runs-on: ${{ matrix.build.os }}
     steps:
