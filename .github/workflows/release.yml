@@ -13,18 +13,25 @@ jobs:
   build:
     strategy:
       # Failure in one platform build won't impact the others
-      fail-fast: false
+      fail-fast: true
       matrix:
         build:
           - name: 'FileRenamer'
             platform: 'linux/amd64'
             os: 'ubuntu-latest'
+            nsis: false
           - name: 'FileRenamer'
             platform: 'windows/amd64'
             os: 'windows-latest'
+            nsis: true
+          - name: 'FileRenamer'
+            platform: 'windows/amd64'
+            os: 'windows-latest'
+            nsis: false
           - name: 'FileRenamer'
             platform: 'darwin/universal'
             os: 'macos-latest'
+            nsis: false
 
     runs-on: ${{ matrix.build.os }}
     steps:
@@ -40,5 +47,6 @@ jobs:
           build-name: ${{ matrix.build.name }}
           build-platform: ${{ matrix.build.platform }}
           package: true
+          nsis: ${{ matrix.build.nsis }}
           go-version: 1.22
           node-version: latest
