@@ -23,10 +23,6 @@ jobs:
             platform: 'windows/amd64'
             os: 'windows-latest'
           - name: 'FileRenamer'
-            platform: 'windows/amd64'
-            os: 'windows-latest'
-            nsis: false
-          - name: 'FileRenamer'
             platform: 'darwin/universal'
             os: 'macos-latest'
 
@@ -44,6 +40,5 @@ jobs:
           build-name: ${{ matrix.build.name }}
           build-platform: ${{ matrix.build.platform }}
           package: true
-          nsis: ${{ matrix.build.nsis }}
           go-version: 1.22
           node-version: latest
