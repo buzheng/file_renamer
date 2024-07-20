@@ -19,7 +19,7 @@ jobs:
           - name: 'FileRenamer'
             platform: 'linux/amd64'
             os: 'ubuntu-latest'
-          - name: 'FileRenamer'
+          - name: 'FileRenamer.exe'
             platform: 'windows/amd64'
             os: 'windows-latest'
           - name: 'FileRenamer'
