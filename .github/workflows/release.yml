@@ -22,6 +22,7 @@ jobs:
           - name: 'FileRenamer'
             platform: 'windows/amd64'
             os: 'windows-latest'
+            nsis: true
           - name: 'FileRenamer.exe'
             platform: 'windows/amd64'
             os: 'windows-latest'
