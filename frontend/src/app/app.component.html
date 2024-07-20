@@ -1,7 +1,7 @@
 <div class="flex flex-col w-screen h-screen">
-  <app-title-bar />
+  <!-- <app-title-bar /> -->
   <div class="grow overflow-hidden">
-    <p-splitter styleClass="w-full h-full" [panelSizes]="[66, 34]">
+    <p-splitter styleClass="w-full h-full border-0 rounded-none" [panelSizes]="[66, 34]">
       <ng-template pTemplate>
         <div class="w-full h-full overflow-hidden">
           <app-files [rules]="rules"></app-files>

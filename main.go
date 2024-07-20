@@ -22,7 +22,7 @@ func main() {
 		Height:    576,
 		MinWidth:  640,
 		MinHeight: 360,
-		Frameless: true,
+		Frameless: false,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
