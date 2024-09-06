@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	rt "runtime"
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
@@ -94,4 +95,9 @@ func (a *App) RenameFile(srcPath string, destPath string) string {
 	}
 
 	return "Success"
+}
+
+// 是否 Mac 系统
+func (a *App) IsMac() bool {
+	return rt.GOOS == "darwin"
 }

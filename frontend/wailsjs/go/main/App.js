@@ -10,6 +10,10 @@ export function GetFilesByPickingFiles() {
   return window['go']['main']['App']['GetFilesByPickingFiles']();
 }
 
+export function IsMac() {
+  return window['go']['main']['App']['IsMac']();
+}
+
 export function RenameFile(arg1, arg2) {
   return window['go']['main']['App']['RenameFile'](arg1, arg2);
 }

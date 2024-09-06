@@ -5,4 +5,6 @@ export function GetFilesByPickingDirectory(arg1:boolean):Promise<Array<string>>;
 
 export function GetFilesByPickingFiles():Promise<Array<string>>;
 
+export function IsMac():Promise<boolean>;
+
 export function RenameFile(arg1:string,arg2:string):Promise<string>;
