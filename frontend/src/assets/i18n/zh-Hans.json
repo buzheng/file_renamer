@@ -1,1 +1,255 @@
-{}
+{
+  "titleBar": {
+    "fullscreen": "全屏",
+    "exitFullscreen": "退出全屏",
+    "alwaysOnTop": "置顶"
+  },
+  "files": {
+    "addFiles": "添加文件",
+    "addFolder": "添加文件夹",
+    "remove": "移除",
+    "rename": "重命名",
+    "filename": "文件名",
+    "newFilename": "新文件名",
+    "result": "结果",
+    "results": {
+      "Pending": "待处理",
+      "Success": "成功",
+      "SrcNotExists": "源文件不存在",
+      "DestExists": "目标文件已存在",
+      "NoChange": "无变化",
+      "DestDuplicates": "目标文件重复",
+      "Error": "错误"
+    },
+    "rule": "规则"
+  },
+  "rules": {
+    "title": "规则",
+    "includeExtension": "包括扩展名",
+    "extension": {
+      "only": "仅扩展名",
+      "exclude": "排除扩展名",
+      "include": "包括扩展名"
+    },
+    "Case": {
+      "name": "大小写",
+      "type": {
+        "Upper": "大写",
+        "Lower": "小写",
+        "CapitalizeEvertWord": "每个单词首字母大写",
+        "CapitalizeFirstLetter": "首字母大写",
+        "Inversion": "反转大小写",
+        "Random": "随机大小写"
+      }
+    },
+    "Insert": {
+      "name": "插入",
+      "text": "要插入的文本",
+      "where": {
+        "Start": "开头",
+        "End": "结尾",
+        "Position": "位置",
+        "BeforeText": "指定文本之前",
+        "AfterText": "指定文本之后"
+      },
+      "positionFromEnd": "从末尾计算位置",
+      "desc": {
+        "Start": "在文件名开头插入 {{text}}",
+        "End": "在文件名结尾插入 {{text}}",
+        "Position": "在指定位置 {{position}} 插入 {{text}}",
+        "PositionFromEnd": "在离末尾指定位置 {{position}} 插入 {{text}}",
+        "BeforeText": "在指定文本 {{beforeText}} 之前插入 {{text}}",
+        "AfterText": "在指定文本 {{afterText}} 之后插入 {{text}}"
+      }
+    },
+    "Replace": {
+      "name": "替换",
+      "from": "替换",
+      "to": "为",
+      "caseSensitive": "区分大小写",
+      "regex": "正则表达式",
+      "type": {
+        "All": "全部替换",
+        "First": "首次替换",
+        "Last": "最后一次替换"
+      },
+      "desc": {
+        "All": {
+          "default": "替换所有 {{from}} 为 {{to}}",
+          "caseSensitive": "替换所有 {{from}} 为 {{to}} (区分大小写)",
+          "regex": "使用正则表达式替换所有 {{from}} 为 {{to}}",
+          "caseSensitiveAndRegex": "使用正则表达式替换所有 {{from}} 为 {{to}} (区分大小写)"
+        },
+        "First": {
+          "default": "替换第一个 {{from}} 为 {{to}}",
+          "caseSensitive": "替换第一个 {{from}} 为 {{to}} (区分大小写)",
+          "regex": "使用正则表达式替换第一个 {{from}} 为 {{to}}",
+          "caseSensitiveAndRegex": "使用正则表达式替换第一个 {{from}} 为 {{to}} (区分大小写)"
+        },
+        "Last": {
+          "default": "替换最后一个 {{from}} 为 {{to}}",
+          "caseSensitive": "替换最后一个 {{from}} 为 {{to}} (区分大小写)",
+          "regex": "使用正则表达式替换最后一个 {{from}} 为 {{to}}",
+          "caseSensitiveAndRegex": "使用正则表达式替换最后一个 {{from}} 为 {{to}} (区分大小写)"
+        }
+      }
+    },
+    "Remove": {
+      "name": "移除",
+      "type": {
+        "All": "全部",
+        "Letters": "字母",
+        "Digits": "数字",
+        "Alphanumeric": "字母和数字",
+        "NonAlphanumeric": "非字母和数字",
+        "Uppercase": "大写字母",
+        "Lowercase": "小写字母",
+        "Whitespace": "空格",
+        "Punctuation": "标点符号",
+        "Brackets": "括号",
+        "Symbols": "符号",
+        "CustomCharacters": "自定义字符",
+        "Text": "文本"
+      },
+      "where": {
+        "All": "全部",
+        "Leading": "开头",
+        "Trailing": "结尾",
+        "Both": "开头和结尾"
+      },
+      "desc": {
+        "All": {
+          "All": "移除所有字符",
+          "Letters": "移除所有字母",
+          "Digits": "移除所有数字",
+          "Alphanumeric": "移除所有字母和数字",
+          "NonAlphanumeric": "移除所有非字母和数字字符",
+          "Uppercase": "移除所有大写字母",
+          "Lowercase": "移除所有小写字母",
+          "Whitespace": "移除所有空格字符",
+          "Punctuation": "移除所有标点符号",
+          "Brackets": "移除所有括号",
+          "Symbols": "移除所有符号",
+          "CustomCharacters": "移除所有自定义字符: {{customCharacters}}",
+          "Text": "移除所有文本: {{text}}"
+        },
+        "Leading": {
+          "All": "移除所有字符",
+          "Letters": "移除开头字母",
+          "Digits": "移除开头数字",
+          "Alphanumeric": "移除开头字母和数字",
+          "NonAlphanumeric": "移除开头非字母和数字字符",
+          "Uppercase": "移除开头大写字母",
+          "Lowercase": "移除开头小写字母",
+          "Whitespace": "移除开头空格字符",
+          "Punctuation": "移除开头标点符号",
+          "Brackets": "移除开头括号",
+          "Symbols": "移除开头符号",
+          "CustomCharacters": "移除开头自定义字符: {{customCharacters}}",
+          "Text": "移除开头文本: {{text}}"
+        },
+        "Trailing": {
+          "All": "移除所有字符",
+          "Letters": "移除结尾字母",
+          "Digits": "移除结尾数字",
+          "Alphanumeric": "移除结尾字母和数字",
+          "NonAlphanumeric": "移除结尾非字母和数字字符",
+          "Uppercase": "移除结尾大写字母",
+          "Lowercase": "移除结尾小写字母",
+          "Whitespace": "移除结尾空格字符",
+          "Punctuation": "移除结尾标点符号",
+          "Brackets": "移除结尾括号",
+          "Symbols": "移除结尾符号",
+          "CustomCharacters": "移除结尾自定义字符: {{customCharacters}}",
+          "Text": "移除结尾文本: {{text}}"
+        },
+        "Both": {
+          "All": "移除所有字符",
+          "Letters": "移除开头和结尾字母",
+          "Digits": "移除开头和结尾数字",
+          "Alphanumeric": "移除开头和结尾字母和数字",
+          "NonAlphanumeric": "移除开头和结尾非字母和数字字符",
+          "Uppercase": "移除开头和结尾大写字母",
+          "Lowercase": "移除开头和结尾小写字母",
+          "Whitespace": "移除开头和结尾空格字符",
+          "Punctuation": "移除开头和结尾标点符号",
+          "Brackets": "移除开头和结尾括号",
+          "Symbols": "移除开头和结尾符号",
+          "CustomCharacters": "移除开头和结尾自定义字符: {{customCharacters}}",
+          "Text": "移除开头和结尾文本: {{text}}"
+        }
+      }
+    },
+    "Series": {
+      "name": "序列",
+      "start": "起始值",
+      "step": "步长",
+      "repeat": "重复次数",
+      "padding": "填充",
+      "resetEvery": "重置间隔",
+      "separator": "分隔符",
+      "where": {
+        "Prefix": "前缀",
+        "Suffix": "后缀",
+        "Position": "位置",
+        "Whole": "整个文件名"
+      },
+      "desc": {
+        "Prefix": "起始值: {{start}}, 步长: {{step}}, 重复次数: {{repeat}}, 填充: {{padding}}, 重置间隔: {{resetEvery}}, 分隔符: {{separator}}, 作为前缀",
+        "Suffix": "起始值: {{start}}, 步长: {{step}}, 重复次数: {{repeat}}, 填充: {{padding}}, 重置间隔: {{resetEvery}}, 分隔符: {{separator}}, 作为后缀",
+        "Position": "起始值: {{start}}, 步长: {{step}}, 重复次数: {{repeat}}, 填充: {{padding}}, 重置间隔: {{resetEvery}}, 分隔符: {{separator}}, 在位置 {{position}}",
+        "Whole": "起始值: {{start}}, 步长: {{step}}, 重复次数: {{repeat}}, 填充: {{padding}}, 重置间隔: {{resetEvery}}, 分隔符: {{separator}}, 作为文件名"
+      }
+    },
+    "NumberPadding": {
+      "name": "数字填充",
+      "length": "长度",
+      "which": {
+        "First": "第一个",
+        "Second": "第二个",
+        "Third": "第三个",
+        "Fourth": "第四个",
+        "Fifth": "第五个",
+        "Sixth": "第六个",
+        "Seventh": "第七个",
+        "Eighth": "第八个",
+        "Ninth": "第九个",
+        "Tenth": "第十个",
+        "Last": "最后一个",
+        "All": "全部"
+      },
+      "isRightPadding": "右侧填充",
+      "desc": {
+        "default": "将第 {{which}} 个数字填充为长度 {{length}}",
+        "right": "将第 {{which}} 个数字填充为长度 {{length}}，右侧填充",
+        "all": "将所有数字填充为长度 {{length}}",
+        "allRight": "将所有数字填充为长度 {{length}}，右侧填充"
+      }
+    },
+    "ID": {
+      "name": "ID",
+      "creator": {
+        "Counter": "计数器",
+        "UUID": "UUID",
+        "NanoID": "NanoID"
+      },
+      "where": {
+        "Filename": "文件名",
+        "Start": "开头",
+        "End": "结尾",
+        "Position": "位置",
+        "BeforeText": "指定文本之前",
+        "AfterText": "指定文本之后"
+      },
+      "seperator": "分隔符",
+      "desc": {
+        "Filename": "将 {{creator}} 作为文件名",
+        "Start": "在文件名开头插入 {{creator}}",
+        "End": "在文件名结尾插入 {{creator}}",
+        "Position": "在指定位置 {{position}} 插入 {{creator}}",
+        "BeforeText": "在指定文本 {{beforeText}} 之前插入 {{creator}}",
+        "AfterText": "在指定文本 {{afterText}} 之后插入 {{creator}}"
+      }
+    }
+  }
+}

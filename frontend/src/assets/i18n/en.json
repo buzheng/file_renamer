@@ -74,10 +74,24 @@
         "Last": "Replace Last"
       },
       "desc": {
-        "default": "Replace {{type}} {{from}} with {{to}}",
-        "caseSensitive": "Replace {{type}} {{from}} with {{to}} (Case Sensitive)",
-        "regex": "Replace {{type}} {{from}} with {{to}} (Regular Expression)",
-        "caseSensitiveAndRegex": "Replace {{type}} {{from}} with {{to}} (Case Sensitive, Regular Expression)"
+        "All": {
+          "default": "Replace all {{from}} with {{to}}",
+          "caseSensitive": "Replace all {{from}} with {{to}} (Case Sensitive)",
+          "regex": "Replace all {{from}} with {{to}} (Regular Expression)",
+          "caseSensitiveAndRegex": "Replace all {{from}} with {{to}} (Case Sensitive, Regular Expression)"
+        },
+        "First": {
+          "default": "Replace first {{from}} with {{to}}",
+          "caseSensitive": "Replace first {{from}} with {{to}} (Case Sensitive)",
+          "regex": "Replace first {{from}} with {{to}} (Regular Expression)",
+          "caseSensitiveAndRegex": "Replace first {{from}} with {{to}} (Case Sensitive, Regular Expression)"
+        },
+        "Last": {
+          "default": "Replace last {{from}} with {{to}}",
+          "caseSensitive": "Replace last {{from}} with {{to}} (Case Sensitive)",
+          "regex": "Replace last {{from}} with {{to}} (Regular Expression)",
+          "caseSensitiveAndRegex": "Replace last {{from}} with {{to}} (Case Sensitive, Regular Expression)"
+        }
       }
     },
     "Remove": {
@@ -206,10 +220,10 @@
       },
       "isRightPadding": "Right Padding",
       "desc": {
-        "default": "Padding the {{which}} number with 0 to the length of {{length}}",
-        "right": "Padding the {{which}} number with 0 to the right of the number to the length of {{length}}",
-        "all": "Padding all numbers with 0 to the length of {{length}}",
-        "allRight": "Padding all numbers with 0 to the right of the number to the length of {{length}}"
+        "default": "Padding the {{which}} number to the length of {{length}}",
+        "right": "Padding the {{which}} number to the right of the number to the length of {{length}}",
+        "all": "Padding all numbers to the length of {{length}}",
+        "allRight": "Padding all numbers to the right of the number to the length of {{length}}"
       }
     },
     "ID": {
