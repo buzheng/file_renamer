@@ -22,7 +22,7 @@ import { RemoveRuleComponent } from './remove-rule/remove-rule.component';
 import { ReplaceRuleComponent } from './replace-rule/replace-rule.component';
 import { Rule, RuleConfig, RuleEditor } from './rule';
 import { SeriesRuleComponent } from './series-rule/series-rule.component';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { forkJoin, map } from 'rxjs';
 
 @Component({
@@ -78,6 +78,12 @@ export class RulesComponent implements OnInit {
   constructor(private translateService: TranslateService) {}
 
   ngOnInit(): void {
+    this.translateService.onLangChange.subscribe((event: any) => {
+      this.initRuleTypeMenus();
+    });
+  }
+
+  initRuleTypeMenus() {
     forkJoin(
       this.ruleTypes.map(type =>
         this.translateService
