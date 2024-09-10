@@ -15,7 +15,7 @@
       plain="true"
       icon="pi pi-language"
       tooltipPosition="bottom"
-      (click)="langsMenu.toggle($event)"
+      (mouseenter)="langsMenu.toggle($event)"
     />
     <p-menu #langsMenu [model]="langsMenuItems" [popup]="true" />
     @if (isFullscreen) {

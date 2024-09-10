@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   Quit,
   WindowFullscreen,
@@ -36,14 +36,17 @@ export class TitleBarComponent implements OnInit {
   isFullscreen = false;
   isAlwaysOnTop = false;
 
-  langs = ['en', 'zh-Hans'];
   langsMenuItems: MenuItem[] | undefined;
 
   ngOnInit(): void {
-    this.langsMenuItems = this.langulageService.langs.map(lang => ({
-      label: lang.label,
-      command: () => this.toggleLanguage(lang.value),
-    }));
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log('Language changed:', event.lang);
+      this.langsMenuItems = this.langulageService.langs.map(lang => ({
+        label: lang.label,
+        icon: event.lang === lang.id ? PrimeIcons.CHECK : undefined,
+        command: () => this.toggleLanguage(lang.id),
+      }));
+    });
   }
 
   get themeIcon() {
