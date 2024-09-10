@@ -6,11 +6,19 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { Rule, RuleEditor } from '../rule';
 import { ReplaceConfig, ReplaceRule, ReplaceType } from './replace-rule';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-replace-rule',
   standalone: true,
-  imports: [FormsModule, InputTextModule, CheckboxModule, RadioButtonModule, KeyFilterModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    CheckboxModule,
+    RadioButtonModule,
+    KeyFilterModule,
+    TranslateModule,
+  ],
   templateUrl: './replace-rule.component.html',
   styleUrl: './replace-rule.component.css',
 })

@@ -5,11 +5,12 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { Rule, RuleEditor } from '../rule';
 import { RemoveConfig, RemoveRule, RemoveType, RemoveWhere } from './remove-rule';
 import { InputTextModule } from 'primeng/inputtext';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-remove-rule',
   standalone: true,
-  imports: [FormsModule, CheckboxModule, RadioButtonModule, InputTextModule],
+  imports: [FormsModule, CheckboxModule, RadioButtonModule, InputTextModule, TranslateModule],
   templateUrl: './remove-rule.component.html',
   styleUrl: './remove-rule.component.css',
 })

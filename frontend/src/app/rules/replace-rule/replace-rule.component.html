@@ -1,11 +1,15 @@
 <div class="space-y-6">
   <div class="space-y-2">
     <div class="flex gap-2 items-center">
-      <label for="from" class="w-10">From</label>
+      <label for="from" class="w-16">
+        {{ 'rules.Replace.from' | translate }}
+      </label>
       <input type="text" id="from" pInputText [(ngModel)]="config.from" />
     </div>
     <div class="flex gap-2 items-center">
-      <label for="to" class="w-10">To</label>
+      <label for="to" class="w-16">
+        {{ 'rules.Replace.to' | translate }}
+      </label>
       <input
         type="text"
         id="to"
@@ -24,11 +28,15 @@
         [binary]="true"
         inputId="caseSensitive"
       />
-      <label for="caseSensitive">Case Sensitive</label>
+      <label for="caseSensitive">
+        {{ 'rules.Replace.caseSensitive' | translate }}
+      </label>
     </div>
     <div class="flex gap-4">
       <p-checkbox name="isRegex" [(ngModel)]="config.isRegex" [binary]="true" inputId="isRegex" />
-      <label for="isRegex">Regular Expression</label>
+      <label for="isRegex">
+        {{ 'rules.Replace.regex' | translate }}
+      </label>
     </div>
   </div>
 
@@ -41,7 +49,7 @@
           [value]="item"
           [inputId]="item"
         />
-        <label for="{{ item }}">Replace {{ item }}</label>
+        <label for="{{ item }}">{{ 'rules.Replace.type.' + item | translate }}</label>
       </div>
     }
   </div>
@@ -54,7 +62,9 @@
         [binary]="true"
         inputId="includeExtension"
       />
-      <label for="includeExtension">Include extensions</label>
+      <label for="includeExtension">
+        {{ 'rules.includeExtension' | translate }}
+      </label>
     </div>
   </div>
 </div>

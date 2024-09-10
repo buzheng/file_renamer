@@ -5,11 +5,12 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { Rule, RuleEditor } from '../rule';
 import { NumberPaddingConfig, NumberPaddingRule, WhichNumberToPad } from './number-padding-rule';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-number-padding-rule',
   standalone: true,
-  imports: [FormsModule, InputNumberModule, RadioButtonModule, CheckboxModule],
+  imports: [FormsModule, InputNumberModule, RadioButtonModule, CheckboxModule, TranslateModule],
   templateUrl: './number-padding-rule.component.html',
   styleUrl: './number-padding-rule.component.css',
 })

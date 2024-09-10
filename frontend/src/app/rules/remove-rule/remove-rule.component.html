@@ -8,7 +8,9 @@
           [value]="item"
           [inputId]="item"
         />
-        <label for="{{ item }}">{{ item }}</label>
+        <label for="{{ item }}">
+          {{ 'rules.Remove.type.' + item | translate }}
+        </label>
         @if (item === 'CustomCharacters' && config.type === 'CustomCharacters') {
           <input pInputText [(ngModel)]="config.customCharacters" />
         } @else if (item === 'Text' && config.type === 'Text') {
@@ -28,7 +30,9 @@
             [value]="item"
             inputId="removeWhere_{{ item }}"
           />
-          <label for="removeWhere_{{ item }}">{{ item }}</label>
+          <label for="removeWhere_{{ item }}">
+            {{ 'rules.Remove.where.' + item | translate }}
+          </label>
         </div>
       }
     </div>
@@ -40,7 +44,9 @@
         [binary]="true"
         inputId="includeExtension"
       />
-      <label for="includeExtension">Include extensions</label>
+      <label for="includeExtension">
+        {{ 'rules.includeExtension' | translate }}
+      </label>
     </div>
   </div>
 </div>

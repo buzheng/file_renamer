@@ -91,4 +91,18 @@ export class ReplaceRule extends AbstractRule {
 
     return `${desc}, ${super.description}`;
   }
+
+  override get descTranslationKey(): string {
+    let subKey = 'default';
+
+    if (this.config.isRegex && this.config.caseSensitive) {
+      subKey = 'caseSensitiveAndRegex';
+    } else if (this.config.caseSensitive) {
+      subKey = 'caseSensitive';
+    } else if (this.config.isRegex) {
+      subKey = 'regex';
+    }
+
+    return `desc.${subKey}`;
+  }
 }

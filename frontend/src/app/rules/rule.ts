@@ -4,6 +4,8 @@ export interface Rule {
   get config(): RuleConfig;
   get name(): string;
   get description(): string;
+  get descTranslationKey(): string;
+  get handleExtensionOnly(): boolean;
 }
 
 export interface FileInfo {
@@ -30,6 +32,10 @@ export abstract class AbstractRule implements Rule {
       : this.config.includeExtension
         ? 'Including extension'
         : 'Excluding extension';
+  }
+
+  get descTranslationKey(): string {
+    return 'desc';
   }
 
   rename(file: FileInfo): string {

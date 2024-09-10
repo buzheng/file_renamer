@@ -101,4 +101,8 @@ export class IdRule extends AbstractRule {
 
     return leading + separator + id + separator + trailing;
   }
+
+  override get descTranslationKey(): string {
+    return `desc.${this.config.where}`;
+  }
 }

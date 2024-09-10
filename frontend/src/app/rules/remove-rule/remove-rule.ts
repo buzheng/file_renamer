@@ -101,6 +101,10 @@ export class RemoveRule extends AbstractRule {
     return `${desc}, ${super.description}`;
   }
 
+  override get descTranslationKey(): string {
+    return `desc.${this.config.where}.${this.config.type}`;
+  }
+
   override apply(name: string): string {
     switch (this.config.type) {
       case 'All':

@@ -4,11 +4,12 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CaseRule, CaseRuleConfig, CaseType } from './case-rule';
 import { RuleEditor } from '../rule';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-case-rule',
   standalone: true,
-  imports: [FormsModule, RadioButtonModule, CheckboxModule],
+  imports: [FormsModule, RadioButtonModule, CheckboxModule, TranslateModule],
   templateUrl: './case-rule.component.html',
   styleUrl: './case-rule.component.css',
 })

@@ -8,6 +8,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { KeyFilterModule } from 'primeng/keyfilter';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-id-rule',
@@ -20,6 +21,7 @@ import { KeyFilterModule } from 'primeng/keyfilter';
     InputNumberModule,
     TooltipModule,
     KeyFilterModule,
+    TranslateModule,
   ],
   templateUrl: './id-rule.component.html',
   styleUrl: './id-rule.component.css',

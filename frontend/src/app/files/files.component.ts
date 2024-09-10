@@ -7,11 +7,12 @@ import {
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { Rule } from '../rules/rule';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-files',
   standalone: true,
-  imports: [TableModule, ButtonModule],
+  imports: [TableModule, ButtonModule, TranslateModule],
   templateUrl: './files.component.html',
   styleUrl: './files.component.css',
 })

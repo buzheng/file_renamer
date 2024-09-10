@@ -8,7 +8,7 @@
           [value]="item"
           [inputId]="item"
         />
-        <label for="{{ item }}">{{ item }}</label>
+        <label for="{{ item }}">{{ 'rules.Case.type.' + item | translate }}</label>
       </div>
     }
   </div>
@@ -19,6 +19,6 @@
       [binary]="true"
       inputId="includeExtension"
     />
-    <label for="includeExtension">Include extensions</label>
+    <label for="includeExtension">{{ 'rules.includeExtension' | translate }}</label>
   </div>
 </div>

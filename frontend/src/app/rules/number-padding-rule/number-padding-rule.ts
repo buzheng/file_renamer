@@ -27,11 +27,25 @@ export class NumberPaddingRule extends AbstractRule {
   }
 
   override get name(): string {
-    return 'Number Padding';
+    return 'NumberPadding';
   }
 
   override get description(): string {
     return `Pad numbers with ${this.config.paddingChar} to a length of ${this.config.length}`;
+  }
+
+  override get descTranslationKey(): string {
+    let subKey = 'default';
+    if (this.config.which === 'All') {
+      subKey = 'all';
+      if (this.config.isRightPadding) {
+        subKey = 'allRight';
+      }
+    } else if (this.config.isRightPadding) {
+      subKey = 'right';
+    }
+
+    return `desc.${subKey}`;
   }
 
   override apply(name: string): string {

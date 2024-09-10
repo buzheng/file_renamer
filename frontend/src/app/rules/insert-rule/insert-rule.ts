@@ -46,6 +46,11 @@ export class InsertRule extends AbstractRule {
     return `Insert "${this.config.text}" ${whereDesc}, ${super.description}`;
   }
 
+  override get descTranslationKey(): string {
+    const whereKey = this.config.positionFromEnd ? 'PositionFromEnd' : this.config.where;
+    return `desc.${whereKey}`;
+  }
+
   override apply(name: string): string {
     let renamed = name;
     switch (this.config.where) {

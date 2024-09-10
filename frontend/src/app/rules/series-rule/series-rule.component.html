@@ -1,7 +1,9 @@
 <div class="space-y-6">
   <div class="space-y-2">
     <div class="flex gap-2 items-center p-fluid">
-      <label for="start" class="w-24">Starts</label>
+      <label for="start" class="w-24">
+        {{ 'rules.Series.start' | translate }}
+      </label>
       <div class="w-24">
         <p-inputNumber
           [(ngModel)]="config.start"
@@ -13,7 +15,9 @@
       </div>
     </div>
     <div class="flex gap-2 items-center p-fluid">
-      <label for="step" class="w-24">Step</label>
+      <label for="step" class="w-24">
+        {{ 'rules.Series.step' | translate }}
+      </label>
       <div class="w-24">
         <p-inputNumber
           [(ngModel)]="config.step"
@@ -25,7 +29,9 @@
       </div>
     </div>
     <div class="flex gap-2 items-center p-fluid">
-      <label for="repeat" class="w-24">Repeat</label>
+      <label for="repeat" class="w-24">
+        {{ 'rules.Series.repeat' | translate }}
+      </label>
       <div class="w-24">
         <p-inputNumber
           [(ngModel)]="config.repeat"
@@ -37,7 +43,9 @@
       </div>
     </div>
     <div class="flex gap-2 items-center p-fluid">
-      <label for="resetEvery" class="w-24">Reset Every</label>
+      <label for="resetEvery" class="w-24">
+        {{ 'rules.Series.resetEvery' | translate }}
+      </label>
       <div class="w-24">
         <p-inputNumber
           [(ngModel)]="config.resetEvery"
@@ -49,7 +57,9 @@
       </div>
     </div>
     <div class="flex gap-2 items-center p-fluid">
-      <label for="padding" class="w-24">Padding</label>
+      <label for="padding" class="w-24">
+        {{ 'rules.Series.padding' | translate }}
+      </label>
       <div class="w-24">
         <p-inputNumber
           [(ngModel)]="config.padding"
@@ -61,7 +71,9 @@
       </div>
     </div>
     <div class="flex gap-2 items-center p-fluid">
-      <label for="separator" class="w-24">Seperator</label>
+      <label for="separator" class="w-24">
+        {{ 'rules.Series.separator' | translate }}
+      </label>
       <div class="w-24">
         <input
           type="text"
@@ -83,7 +95,9 @@
           [value]="item"
           [inputId]="item"
         />
-        <label for="{{ item }}">{{ item }}</label>
+        <label for="{{ item }}">
+          {{ 'rules.Series.where.' + item | translate }}
+        </label>
         @if (item === 'Position' && config.where === 'Position') {
           <div class="w-24">
             <p-inputNumber [(ngModel)]="config.position" showButtons min="0" class="!w-full" />

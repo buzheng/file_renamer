@@ -1,7 +1,7 @@
 <div class="flex flex-col h-full max-w-full min-w-60">
   <div class="py-1 x-toolbar-border-b">
     <div class="flex justify-between items-center pl-4 pr-2">
-      <span class="font-medium">Rules</span>
+      <span class="font-medium">{{ 'rules.title' | translate }}</span>
       <div class="grow"></div>
       <p-button
         text="true"
@@ -40,14 +40,19 @@
               <div class="flex gap-4 items-center">
                 <div class="italic flex gap-1">
                   {{ index + 1 }}.
-                  <span class="font-medium">{{ item.rule.name }}</span>
+                  <span class="font-medium">
+                    {{ 'rules.' + item.rule.name + '.name' | translate }}
+                  </span>
                 </div>
                 <div class="hidden group-hover:block space-x-3 opacity-60 whitespace-nowrap">
                   <i class="pi pi-pencil cursor-pointer text-sm" (click)="editRule(index)"></i>
                   <i class="pi pi-trash cursor-pointer text-sm" (click)="removeRule(index)"></i>
                 </div>
               </div>
-              <div class="line-clamp-2">{{ item.rule.description }}</div>
+              <div class="line-clamp-2">
+                {{ getDesc(item.rule) }},
+                {{ getExtensionDesc(item.rule) }}
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +62,11 @@
 </div>
 
 @if (visible) {
-  <p-dialog [header]="editRuleType" [modal]="true" [(visible)]="visible">
+  <p-dialog
+    [header]="'rules.' + editRuleType + '.name' | translate"
+    [modal]="true"
+    [(visible)]="visible"
+  >
     <div>
       @if (editRuleType === 'Case') {
         <app-case-rule #ruleEditor [config]="editRuleConfig" />

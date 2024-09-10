@@ -1,0 +1,241 @@
+{
+  "titleBar": {
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "alwaysOnTop": "Allways on Top"
+  },
+  "files": {
+    "addFiles": "Add Files",
+    "addFolder": "Add Folder",
+    "remove": "Remove",
+    "rename": "Rename",
+    "filename": "Filename",
+    "newFilename": "New Filename",
+    "result": "Result",
+    "results": {
+      "Pending": "Pending",
+      "Success": "Success",
+      "SrcNotExists": "Source Not Exists",
+      "DestExists": "Destination Exists",
+      "NoChange": "No Change",
+      "DestDuplicates": "Destination Duplicates",
+      "Error": "Error"
+    },
+    "rule": "Rule"
+  },
+  "rules": {
+    "title": "Rules",
+    "includeExtension": "Include Extension",
+    "extension": {
+      "only": "Extension Only",
+      "exclude": "Exclude Extension",
+      "include": "Include Extension"
+    },
+    "Case": {
+      "name": "Case",
+      "type": {
+        "Upper": "Upper Case",
+        "Lower": "Lower Case",
+        "CapitalizeEvertWord": "Capitalize Every Word",
+        "CapitalizeFirstLetter": "Capitalize First Letter",
+        "Inversion": "Inversion Case",
+        "Random": "Random Case"
+      }
+    },
+    "Insert": {
+      "name": "Insert",
+      "text": "Text to Insert",
+      "where": {
+        "Start": "Start",
+        "End": "End",
+        "Position": "Position",
+        "BeforeText": "Before Text",
+        "AfterText": "After Text"
+      },
+      "positionFromEnd": "From End",
+      "desc": {
+        "Start": "Insert {{text}} at the start of the filename",
+        "End": "Insert {{text}} at the end of the filename",
+        "Position": "Insert {{text}} at the specified position {{position}}",
+        "PositionFromEnd": "Insert {{text}} at the specified position from the end {{position}}",
+        "BeforeText": "Insert {{text}} before the specified text {{beforeText}}",
+        "AfterText": "Insert {{text}} after the specified text {{afterText}}"
+      }
+    },
+    "Replace": {
+      "name": "Replace",
+      "from": "Replace",
+      "to": "With",
+      "caseSensitive": "Case Sensitive",
+      "regex": "Regular Expression",
+      "type": {
+        "All": "Replace All",
+        "First": "Replace First",
+        "Last": "Replace Last"
+      },
+      "desc": {
+        "default": "Replace {{type}} {{from}} with {{to}}",
+        "caseSensitive": "Replace {{type}} {{from}} with {{to}} (Case Sensitive)",
+        "regex": "Replace {{type}} {{from}} with {{to}} (Regular Expression)",
+        "caseSensitiveAndRegex": "Replace {{type}} {{from}} with {{to}} (Case Sensitive, Regular Expression)"
+      }
+    },
+    "Remove": {
+      "name": "Remove",
+      "type": {
+        "All": "All",
+        "Letters": "Letters",
+        "Digits": "Digits",
+        "Alphanumeric": "Alphanumeric",
+        "NonAlphanumeric": "Non-Alphanumeric",
+        "Uppercase": "Uppercase",
+        "Lowercase": "Lowercase",
+        "Whitespace": "Whitespace",
+        "Punctuation": "Punctuation",
+        "Brackets": "Brackets",
+        "Symbols": "Symbols",
+        "CustomCharacters": "Custom Characters",
+        "Text": "Text"
+      },
+      "where": {
+        "All": "All",
+        "Leading": "Leading",
+        "Trailing": "Trailing",
+        "Both": "Both"
+      },
+      "desc": {
+        "All": {
+          "All": "Remove all characters",
+          "Letters": "Remove all letters",
+          "Digits": "Remove all digits",
+          "Alphanumeric": "Remove all alphanumeric characters",
+          "NonAlphanumeric": "Remove all non-alphanumeric characters",
+          "Uppercase": "Remove all uppercase letters",
+          "Lowercase": "Remove all lowercase letters",
+          "Whitespace": "Remove all whitespace characters",
+          "Punctuation": "Remove all punctuation characters",
+          "Brackets": "Remove all brackets",
+          "Symbols": "Remove all symbols",
+          "CustomCharacters": "Remove all custom characters: {{customCharacters}}",
+          "Text": "Remove all text: {{text}}"
+        },
+        "Leading": {
+          "All": "Remove all characters",
+          "Letters": "Remove leading letters",
+          "Digits": "Remove leading digits",
+          "Alphanumeric": "Remove leading alphanumeric characters",
+          "NonAlphanumeric": "Remove leading non-alphanumeric characters",
+          "Uppercase": "Remove leading uppercase letters",
+          "Lowercase": "Remove leading lowercase letters",
+          "Whitespace": "Remove leading whitespace characters",
+          "Punctuation": "Remove leading punctuation characters",
+          "Brackets": "Remove leading brackets",
+          "Symbols": "Remove leading symbols",
+          "CustomCharacters": "Remove leading custom characters: {{customCharacters}}",
+          "Text": "Remove leading text: {{text}}"
+        },
+        "Trailing": {
+          "All": "Remove all characters",
+          "Letters": "Remove trailing letters",
+          "Digits": "Remove trailing digits",
+          "Alphanumeric": "Remove trailing alphanumeric characters",
+          "NonAlphanumeric": "Remove trailing non-alphanumeric characters",
+          "Uppercase": "Remove trailing uppercase letters",
+          "Lowercase": "Remove trailing lowercase letters",
+          "Whitespace": "Remove trailing whitespace characters",
+          "Punctuation": "Remove trailing punctuation characters",
+          "Brackets": "Remove trailing brackets",
+          "Symbols": "Remove trailing symbols",
+          "CustomCharacters": "Remove trailing custom characters: {{customCharacters}}",
+          "Text": "Remove trailing text: {{text}}"
+        },
+        "Both": {
+          "All": "Remove all characters",
+          "Letters": "Remove leading and trailing letters",
+          "Digits": "Remove leading and trailing digits",
+          "Alphanumeric": "Remove leading and trailing alphanumeric characters",
+          "NonAlphanumeric": "Remove leading and trailing non-alphanumeric characters",
+          "Uppercase": "Remove leading and trailing uppercase letters",
+          "Lowercase": "Remove leading and trailing lowercase letters",
+          "Whitespace": "Remove leading and trailing whitespace characters",
+          "Punctuation": "Remove leading and trailing punctuation characters",
+          "Brackets": "Remove leading and trailing brackets",
+          "Symbols": "Remove leading and trailing symbols",
+          "CustomCharacters": "Remove leading and trailing custom characters: {{customCharacters}}",
+          "Text": "Remove leading and trailing text: {{text}}"
+        }
+      }
+    },
+    "Series": {
+      "name": "Series",
+      "start": "Starts",
+      "step": "Step",
+      "repeat": "Repeat",
+      "padding": "Padding",
+      "resetEvery": "Reset Every",
+      "separator": "Separator",
+      "where": {
+        "Prefix": "Prefix",
+        "Suffix": "Suffix",
+        "Position": "Position",
+        "Whole": "Whole"
+      },
+      "desc": {
+        "Prefix": "Start: {{start}}, Step: {{step}}, Repeat: {{repeat}}, Padding: {{padding}}, Reset Every: {{resetEvery}}, Separator: {{separator}}, As Prefix",
+        "Suffix": "Start: {{start}}, Step: {{step}}, Repeat: {{repeat}}, Padding: {{padding}}, Reset Every: {{resetEvery}}, Separator: {{separator}}, As Suffix",
+        "Position": "Start: {{start}}, Step: {{step}}, Repeat: {{repeat}}, Padding: {{padding}}, Reset Every: {{resetEvery}}, Separator: {{separator}}, At Position {{position}}",
+        "Whole": "Start: {{start}}, Step: {{step}}, Repeat: {{repeat}}, Padding: {{padding}}, Reset Every: {{resetEvery}}, Separator: {{separator}}, As Filename"
+      }
+    },
+    "NumberPadding": {
+      "name": "Number Padding",
+      "length": "Length",
+      "which": {
+        "First": "First",
+        "Second": "Second",
+        "Third": "Third",
+        "Fourth": "Fourth",
+        "Fifth": "Fifth",
+        "Sixth": "Sixth",
+        "Seventh": "Seventh",
+        "Eighth": "Eighth",
+        "Ninth": "Ninth",
+        "Tenth": "Tenth",
+        "Last": "Last",
+        "All": "All"
+      },
+      "isRightPadding": "Right Padding",
+      "desc": {
+        "default": "Padding the {{which}} number with 0 to the length of {{length}}",
+        "right": "Padding the {{which}} number with 0 to the right of the number to the length of {{length}}",
+        "all": "Padding all numbers with 0 to the length of {{length}}",
+        "allRight": "Padding all numbers with 0 to the right of the number to the length of {{length}}"
+      }
+    },
+    "ID": {
+      "name": "ID",
+      "creator": {
+        "Counter": "Counter",
+        "UUID": "UUID",
+        "NanoID": "NanoID"
+      },
+      "where": {
+        "Filename": "Filename",
+        "Start": "Start",
+        "End": "End",
+        "Position": "Position",
+        "BeforeText": "Before Text",
+        "AfterText": "After Text"
+      },
+      "seperator": "Seperator",
+      "desc": {
+        "Filename": "Insert {{creator}} as filename",
+        "Start": "Insert {{creator}} at the start of the filename",
+        "End": "Insert {{creator}} at the end of the filename",
+        "Position": "Insert {{creator}} at the specified position {{position}}",
+        "BeforeText": "Insert {{creator}} before the specified text {{beforeText}}",
+        "AfterText": "Insert {{creator}} after the specified text {{afterText}}"
+      }
+    }
+  }
+}

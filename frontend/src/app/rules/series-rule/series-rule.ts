@@ -48,6 +48,10 @@ export class SeriesRule extends AbstractRule {
     return `${whereDesc} start ${start} step ${step} repeat ${repeat}, Pad to ${padding}, ${resetDesc}`;
   }
 
+  override get descTranslationKey(): string {
+    return `desc.${this.config.where}`;
+  }
+
   override apply(name: string, index: number): string {
     let { start, step, repeat, padding, resetEvery, separator } = this.config;
     resetEvery = resetEvery || 999999;

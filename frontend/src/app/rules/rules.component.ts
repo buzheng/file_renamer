@@ -22,6 +22,8 @@ import { RemoveRuleComponent } from './remove-rule/remove-rule.component';
 import { ReplaceRuleComponent } from './replace-rule/replace-rule.component';
 import { Rule, RuleConfig, RuleEditor } from './rule';
 import { SeriesRuleComponent } from './series-rule/series-rule.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-rules',
@@ -45,6 +47,7 @@ import { SeriesRuleComponent } from './series-rule/series-rule.component';
     CdkDropList,
     CdkDrag,
     CdkDragPlaceholder,
+    TranslateModule,
   ],
   templateUrl: './rules.component.html',
   styleUrls: ['./rules.component.css'],
@@ -72,14 +75,21 @@ export class RulesComponent implements OnInit {
 
   dragIndex?: number;
 
-  constructor() {}
+  constructor(private translateService: TranslateService) {}
 
   ngOnInit(): void {
-    this.ruleTypeMenus = this.ruleTypes.map(type => ({
-      label: type,
-      // icon: PrimeIcons.PLUS,
-      command: () => this.openRuleEditor(type),
-    }));
+    forkJoin(
+      this.ruleTypes.map(type =>
+        this.translateService
+          .get(`rules.${type}.name`)
+          .pipe(map(translation => ({ type, translation }))),
+      ),
+    ).subscribe(translations => {
+      this.ruleTypeMenus = translations.map(({ type, translation }) => ({
+        label: translation,
+        command: () => this.openRuleEditor(type),
+      }));
+    });
   }
 
   openRuleEditor(type: RuleType, config?: RuleConfig) {
@@ -141,6 +151,19 @@ export class RulesComponent implements OnInit {
 
   private get checkedRules(): Rule[] {
     return this.items.filter(item => item.checked).map(item => item.rule);
+  }
+
+  getDesc(rule: Rule): string {
+    const key = 'rules.' + rule.name + '.' + rule.descTranslationKey;
+    return this.translateService.instant(key, rule.config);
+  }
+
+  getExtensionDesc(rule: Rule): string {
+    const key =
+      'rules.extension.' +
+      (rule.handleExtensionOnly ? 'only' : rule.config.includeExtension ? 'include' : 'exclude');
+
+    return this.translateService.instant(key);
   }
 }
 

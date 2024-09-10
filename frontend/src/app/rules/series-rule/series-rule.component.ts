@@ -7,6 +7,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-series-rule',
@@ -18,6 +19,7 @@ import { KeyFilterModule } from 'primeng/keyfilter';
     CheckboxModule,
     InputTextModule,
     KeyFilterModule,
+    TranslateModule,
   ],
   templateUrl: './series-rule.component.html',
   styleUrl: './series-rule.component.css',

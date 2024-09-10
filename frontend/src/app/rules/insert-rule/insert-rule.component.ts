@@ -8,6 +8,7 @@ import { RuleEditor } from '../rule';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { InputSwitch, InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-insert-rule',
@@ -19,6 +20,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     RadioButtonModule,
     KeyFilterModule,
     CheckboxModule,
+    TranslateModule,
   ],
   templateUrl: './insert-rule.component.html',
   styleUrl: './insert-rule.component.css',

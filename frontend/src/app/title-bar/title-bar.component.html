@@ -10,15 +10,28 @@
     </div>
   </div>
   <div class="pr-2">
+    <p-button
+      text="true"
+      plain="true"
+      icon="pi pi-language"
+      tooltipPosition="bottom"
+      (click)="langsMenu.toggle($event)"
+    />
+    <p-menu #langsMenu [model]="langsMenuItems" [popup]="true" />
     @if (isFullscreen) {
-      <p-button text="false" plain="true" label="Exit Fullscreen" (click)="fullscreen()" />
+      <p-button
+        text="false"
+        plain="true"
+        [label]="'titleBar.exitFullscreen' | translate"
+        (click)="fullscreen()"
+      />
     } @else {
       <p-button text="true" plain="true" [icon]="themeIcon" (click)="toggleTheme()" />
       <p-button
         [text]="isAlwaysOnTop ? false : true"
         plain="true"
         icon="pi pi-thumbtack"
-        pTooltip="Always on Top"
+        [pTooltip]="'titleBar.alwaysOnTop' | translate"
         tooltipPosition="bottom"
         (click)="setAlwaysOnTop()"
       />
@@ -26,7 +39,7 @@
         text="true"
         plain="true"
         icon="pi pi-expand"
-        pTooltip="Fullscreen"
+        [pTooltip]="'titleBar.fullscreen' | translate"
         tooltipPosition="bottom"
         (click)="fullscreen()"
       />

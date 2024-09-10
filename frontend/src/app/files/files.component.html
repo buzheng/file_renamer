@@ -3,7 +3,7 @@
     <p-button
       [text]="true"
       plain="true"
-      label="Add Files"
+      [label]="'files.addFiles' | translate"
       icon="pi pi-file-plus"
       severity="contrast"
       (click)="pickFiles()"
@@ -12,7 +12,7 @@
     <p-button
       [text]="true"
       plain="true"
-      label="Add Folder"
+      [label]="'files.addFolder' | translate"
       icon="pi pi-folder-plus"
       severity="contrast"
       class="whitespace-nowrap"
@@ -21,7 +21,7 @@
     <p-button
       [text]="true"
       plain="true"
-      label="Remove"
+      [label]="'files.remove' | translate"
       icon="pi pi-trash"
       severity="contrast"
       [disabled]="selectedFiles.length === 0"
@@ -30,7 +30,7 @@
     <p-button
       [text]="true"
       plain="true"
-      label="Rename"
+      [label]="'files.rename' | translate"
       icon="pi pi-check"
       severity="contrast"
       [disabled]="!canRename"
@@ -42,12 +42,12 @@
       <ng-template pTemplate="header">
         <tr>
           <th class="w-4 text-right"><p-tableHeaderCheckbox /></th>
-          <th>Filename</th>
-          <th>New Filename</th>
-          <th>Result</th>
+          <th>{{ 'files.filename' | translate }}</th>
+          <th>{{ 'files.newFilename' | translate }}</th>
+          <th>{{ 'files.result' | translate }}</th>
           @if (rules.length > 1) {
             @for (rule of rules; track $index) {
-              <th>Rule {{ $index + 1 }}</th>
+              <th>{{ 'files.rule' | translate }} {{ $index + 1 }}</th>
             }
           }
         </tr>
@@ -67,7 +67,7 @@
           >
             {{ file.newFilename }}
           </td>
-          <td>{{ file.result }}</td>
+          <td>{{ 'files.results.' + file.result | translate }}</td>
           @if (file.ruleResults.length > 1) {
             @for (result of file.ruleResults; track $index) {
               <td>

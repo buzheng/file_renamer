@@ -47,6 +47,10 @@ export class CaseRule extends AbstractRule {
     return `${caseDesc}, ${super.description}`;
   }
 
+  override get descTranslationKey(): string {
+    return `type.${this.config.caseType}`;
+  }
+
   override apply(part: string): string {
     let renamed = part;
     switch (this.config.caseType) {

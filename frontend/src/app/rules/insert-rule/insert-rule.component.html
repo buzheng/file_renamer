@@ -1,6 +1,8 @@
 <div class="space-y-6 w-96">
   <div class="flex flex-col gap-2">
-    <label for="text">Text to insert</label>
+    <label for="text">
+      {{ 'rules.Insert.text' | translate }}
+    </label>
     <input
       type="text"
       id="text"
@@ -19,13 +21,17 @@
           [value]="item"
           [inputId]="item"
         />
-        <label for="{{ item }}">{{ item }}</label>
+        <label for="{{ item }}">{{ 'rules.Insert.where.' + item | translate }}</label>
         @if (item === 'Position' && config.where === 'Position') {
           <div class="w-24">
             <p-inputNumber [(ngModel)]="config.position" showButtons min="0" class="!w-full" />
           </div>
           <div>
-            <p-checkbox [(ngModel)]="config.positionFromEnd" [binary]="true" label="From end" />
+            <p-checkbox
+              [(ngModel)]="config.positionFromEnd"
+              [binary]="true"
+              [label]="'rules.Insert.positionFromEnd' | translate"
+            />
           </div>
         } @else if (item === 'BeforeText' && config.where === 'BeforeText') {
           <input type="text" pInputText [(ngModel)]="config.beforeText" />
@@ -43,6 +49,6 @@
       [binary]="true"
       inputId="includeExtension"
     />
-    <label for="includeExtension">Include extensions</label>
+    <label for="includeExtension">{{ 'rules.includeExtension' | translate }}</label>
   </div>
 </div>
