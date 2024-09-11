@@ -103,6 +103,6 @@ export class ReplaceRule extends AbstractRule {
       subKey = 'regex';
     }
 
-    return `desc.${subKey}`;
+    return `desc.${this.config.type}.${subKey}`;
   }
 }

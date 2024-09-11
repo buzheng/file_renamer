@@ -225,10 +225,54 @@
       },
       "isRightPadding": "右侧填充",
       "desc": {
-        "default": "将第 {{which}} 个数字填充为长度 {{length}}",
-        "right": "将第 {{which}} 个数字填充为长度 {{length}}，右侧填充",
-        "all": "将所有数字填充为长度 {{length}}",
-        "allRight": "将所有数字填充为长度 {{length}}，右侧填充"
+        "First": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 1 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 1 个数字至长度 {{length}}"
+        },
+        "Second": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 2 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 2 个数字至长度 {{length}}"
+        },
+        "Third": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 3 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 3 个数字至长度 {{length}}"
+        },
+        "Fourth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 4 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 4 个数字至长度 {{length}}"
+        },
+        "Fifth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 5 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 5 个数字至长度 {{length}}"
+        },
+        "Sixth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 6 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 6 个数字至长度 {{length}}"
+        },
+        "Seventh": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 7 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 7 个数字至长度 {{length}}"
+        },
+        "Eighth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 8 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 8 个数字至长度 {{length}}"
+        },
+        "Ninth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 9 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 9 个数字至长度 {{length}}"
+        },
+        "Tenth": {
+          "left": "用 '{{paddingChar}}' 左侧填充第 10 个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充第 10 个数字至长度 {{length}}"
+        },
+        "Last": {
+          "left": "用 '{{paddingChar}}' 左侧填充最后一个数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充最后一个数字至长度 {{length}}"
+        },
+        "All": {
+          "left": "用 '{{paddingChar}}' 左侧填充所有数字至长度 {{length}}",
+          "right": "用 '{{paddingChar}}' 右侧填充所有数字至长度 {{length}}"
+        }
       }
     },
     "ID": {

@@ -16,7 +16,7 @@ export type WhichNumberToPad =
 
 export interface NumberPaddingConfig extends RuleConfig {
   length: number;
-  paddingChar?: string;
+  paddingChar: string;
   which: WhichNumberToPad;
   isRightPadding?: boolean;
 }
@@ -35,17 +35,7 @@ export class NumberPaddingRule extends AbstractRule {
   }
 
   override get descTranslationKey(): string {
-    let subKey = 'default';
-    if (this.config.which === 'All') {
-      subKey = 'all';
-      if (this.config.isRightPadding) {
-        subKey = 'allRight';
-      }
-    } else if (this.config.isRightPadding) {
-      subKey = 'right';
-    }
-
-    return `desc.${subKey}`;
+    return `desc.${this.config.which}.${this.config.isRightPadding ? 'right' : 'left'}`;
   }
 
   override apply(name: string): string {

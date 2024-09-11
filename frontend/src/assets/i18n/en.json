@@ -225,10 +225,54 @@
       },
       "isRightPadding": "Right Padding",
       "desc": {
-        "default": "Padding the {{which}} number to the length of {{length}}",
-        "right": "Padding the {{which}} number to the right of the number to the length of {{length}}",
-        "all": "Padding all numbers to the length of {{length}}",
-        "allRight": "Padding all numbers to the right of the number to the length of {{length}}"
+        "First": {
+          "left": "Left pad the 1st number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 1st number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Second": {
+          "left": "Left pad the 2nd number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 2nd number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Third": {
+          "left": "Left pad the 3rd number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 3rd number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Fourth": {
+          "left": "Left pad the 4th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 4th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Fifth": {
+          "left": "Left pad the 5th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 5th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Sixth": {
+          "left": "Left pad the 6th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 6th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Seventh": {
+          "left": "Left pad the 7th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 7th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Eighth": {
+          "left": "Left pad the 8th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 8th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Ninth": {
+          "left": "Left pad the 9th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 9th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Tenth": {
+          "left": "Left pad the 10th number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the 10th number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "Last": {
+          "left": "Left pad the last number with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad the last number with '{{paddingChar}}' to a length of {{length}}"
+        },
+        "All": {
+          "left": "Left pad all numbers with '{{paddingChar}}' to a length of {{length}}",
+          "right": "Right pad all numbers with '{{paddingChar}}' to a length of {{length}}"
+        }
       }
     },
     "ID": {
