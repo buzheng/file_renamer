@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   Quit,
   WindowFullscreen,
@@ -13,10 +13,10 @@ import { ConfirmationService, MenuItem, PrimeIcons } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { TooltipModule } from 'primeng/tooltip';
-import { delay, of } from 'rxjs';
+import { delay, from, of } from 'rxjs';
+import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 import { LanguageService } from '../services/language.service';
 import { Theme, ThemeService } from '../services/theme.service';
-import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 
 @Component({
   selector: 'app-title-bar',
@@ -42,14 +42,6 @@ export class TitleBarComponent implements OnInit {
   themeMenuItems?: MenuItem[];
 
   ngOnInit(): void {
-    // this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-    //   this.langsMenuItems = this.langulageService.langs.map(lang => ({
-    //     label: lang.label,
-    //     icon: event.lang === lang.id ? PrimeIcons.CHECK : undefined,
-    //     command: () => this.toggleLanguage(lang.id),
-    //   }));
-    // });
-
     this.langsMenuItems = this.langulageService.langs.map(lang => ({
       label: lang.label,
       command: () => this.toggleLanguage(lang.id),
@@ -97,14 +89,6 @@ export class TitleBarComponent implements OnInit {
 
   toggleMaximize() {
     WindowToggleMaximise();
-
-    of(this.isMaximized)
-      .pipe(delay(200))
-      .subscribe(() => {
-        WindowIsMaximised().then(maximized => {
-          this.isMaximized = maximized;
-        });
-      });
   }
 
   quit() {
@@ -123,5 +107,13 @@ export class TitleBarComponent implements OnInit {
 
   toggleLanguage(lang: string) {
     this.translateService.use(lang);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    console.log('resize', event);
+    from(WindowIsMaximised()).subscribe(maximized => {
+      this.isMaximized = maximized;
+    });
   }
 }
