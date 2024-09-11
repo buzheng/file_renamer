@@ -30,7 +30,7 @@ export class TitleBarComponent implements OnInit {
   constructor(
     public themeService: ThemeService,
     private langulageService: LanguageService,
-    private translateService: TranslateService,
+    public translateService: TranslateService,
   ) {}
 
   isMaximized = false;
@@ -42,13 +42,19 @@ export class TitleBarComponent implements OnInit {
   themeMenuItems?: MenuItem[];
 
   ngOnInit(): void {
-    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.langsMenuItems = this.langulageService.langs.map(lang => ({
-        label: lang.label,
-        icon: event.lang === lang.id ? PrimeIcons.CHECK : undefined,
-        command: () => this.toggleLanguage(lang.id),
-      }));
-    });
+    // this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+    //   this.langsMenuItems = this.langulageService.langs.map(lang => ({
+    //     label: lang.label,
+    //     icon: event.lang === lang.id ? PrimeIcons.CHECK : undefined,
+    //     command: () => this.toggleLanguage(lang.id),
+    //   }));
+    // });
+
+    this.langsMenuItems = this.langulageService.langs.map(lang => ({
+      label: lang.label,
+      command: () => this.toggleLanguage(lang.id),
+      id: lang.id,
+    }));
 
     this.themeMenuItems = [
       {

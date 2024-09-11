@@ -10,7 +10,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuItemComponent {
   @Input() item!: MenuItem;
-  @Input() translateKey: string = '';
+  @Input() translateKey?: string;
   @Input() checked: boolean = false;
 
   constructor() {}

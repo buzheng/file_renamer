@@ -15,9 +15,13 @@
       plain="true"
       icon="pi pi-language"
       tooltipPosition="bottom"
-      (mouseenter)="langsMenu.toggle($event)"
+      (click)="langsMenu.toggle($event)"
     />
-    <p-menu #langsMenu [model]="langsMenuItems" [popup]="true" />
+    <p-menu #langsMenu [model]="langsMenuItems" [popup]="true">
+      <ng-template pTemplate="item" let-item>
+        <app-menu-item [item]="item" [checked]="item.id === translateService.currentLang" />
+      </ng-template>
+    </p-menu>
     <p-button text="true" plain="true" icon="pi pi-palette" (click)="themeMenu.toggle($event)" />
     <p-menu #themeMenu [model]="themeMenuItems" [popup]="true">
       <ng-template pTemplate="item" let-item>
