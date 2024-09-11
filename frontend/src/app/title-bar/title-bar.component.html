@@ -18,6 +18,21 @@
       (mouseenter)="langsMenu.toggle($event)"
     />
     <p-menu #langsMenu [model]="langsMenuItems" [popup]="true" />
+    <p-button
+      text="true"
+      plain="true"
+      icon="pi pi-palette"
+      (click)="themeMenu.toggle($event)"
+    />
+    <p-menu #themeMenu [model]="themeMenuItems" [popup]="true">
+      <ng-template pTemplate="item" let-item>
+        <app-menu-item
+          [item]="item"
+          [checked]="item.label.toLowerCase() === themeService.theme"
+          [translateKeyPrefix]="'titleBar.theme.'"
+        />
+      </ng-template>
+    </p-menu>
     @if (isFullscreen) {
       <p-button
         text="false"
@@ -26,7 +41,6 @@
         (click)="fullscreen()"
       />
     } @else {
-      <p-button text="true" plain="true" [icon]="themeIcon" (click)="toggleTheme()" />
       <p-button
         [text]="isAlwaysOnTop ? false : true"
         plain="true"

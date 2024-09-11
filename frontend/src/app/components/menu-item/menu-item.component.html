@@ -1,0 +1,11 @@
+<div class="p-menuitem-content">
+  <a pRipple class="p-ripple p-element p-menuitem-link">
+    @if (item.icon) {
+      <span class="p-menuitem-icon {{ item.icon }}"></span>
+    }
+    <span class="p-menuitem-text">{{ translateKeyPrefix + item.label | translate }}</span>
+    @if (checked) {
+      <span class="ml-auto -mr-1 p-menuitem-icon pi pi-check"></span>
+    }
+  </a>
+</div>

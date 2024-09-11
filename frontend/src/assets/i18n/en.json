@@ -2,7 +2,12 @@
   "titleBar": {
     "fullscreen": "Fullscreen",
     "exitFullscreen": "Exit Fullscreen",
-    "alwaysOnTop": "Allways on Top"
+    "alwaysOnTop": "Allways on Top",
+    "theme": {
+      "System": "System",
+      "Light": "Light",
+      "Dark": "Dark"
+    }
   },
   "files": {
     "addFiles": "Add Files",

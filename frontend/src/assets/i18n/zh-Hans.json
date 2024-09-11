@@ -2,7 +2,12 @@
   "titleBar": {
     "fullscreen": "全屏",
     "exitFullscreen": "退出全屏",
-    "alwaysOnTop": "置顶"
+    "alwaysOnTop": "置顶",
+    "theme": {
+      "System": "跟随系统",
+      "Light": "浅色",
+      "Dark": "深色"
+    }
   },
   "files": {
     "addFiles": "添加文件",

@@ -16,18 +16,19 @@ import { TooltipModule } from 'primeng/tooltip';
 import { delay, of } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 import { Theme, ThemeService } from '../services/theme.service';
+import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 
 @Component({
   selector: 'app-title-bar',
   standalone: true,
-  imports: [ButtonModule, TooltipModule, MenuModule, TranslateModule],
+  imports: [ButtonModule, TooltipModule, MenuModule, TranslateModule, MenuItemComponent],
   providers: [ConfirmationService],
   templateUrl: './title-bar.component.html',
   styleUrl: './title-bar.component.css',
 })
 export class TitleBarComponent implements OnInit {
   constructor(
-    private themeService: ThemeService,
+    public themeService: ThemeService,
     private langulageService: LanguageService,
     private translateService: TranslateService,
   ) {}
@@ -38,15 +39,34 @@ export class TitleBarComponent implements OnInit {
 
   langsMenuItems: MenuItem[] | undefined;
 
+  themeMenuItems?: MenuItem[];
+
   ngOnInit(): void {
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log('Language changed:', event.lang);
       this.langsMenuItems = this.langulageService.langs.map(lang => ({
         label: lang.label,
         icon: event.lang === lang.id ? PrimeIcons.CHECK : undefined,
         command: () => this.toggleLanguage(lang.id),
       }));
     });
+
+    this.themeMenuItems = [
+      {
+        label: 'System',
+        icon: PrimeIcons.DESKTOP,
+        command: () => this.themeService.setTheme('system'),
+      },
+      {
+        label: 'Light',
+        icon: PrimeIcons.SUN,
+        command: () => this.themeService.setTheme('light'),
+      },
+      {
+        label: 'Dark',
+        icon: PrimeIcons.MOON,
+        command: () => this.themeService.setTheme('dark'),
+      },
+    ];
   }
 
   get themeIcon() {
