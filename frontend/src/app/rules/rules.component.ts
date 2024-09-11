@@ -7,6 +7,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -14,6 +15,7 @@ import { DialogModule } from 'primeng/dialog';
 import { MenuModule } from 'primeng/menu';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
+import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 import { CaseRuleComponent } from './case-rule/case-rule.component';
 import { IdRuleComponent } from './id-rule/id-rule.component';
 import { InsertRuleComponent } from './insert-rule/insert-rule.component';
@@ -22,9 +24,6 @@ import { RemoveRuleComponent } from './remove-rule/remove-rule.component';
 import { ReplaceRuleComponent } from './replace-rule/replace-rule.component';
 import { Rule, RuleConfig, RuleEditor } from './rule';
 import { SeriesRuleComponent } from './series-rule/series-rule.component';
-import { TranslateModule, TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
-import { forkJoin, map } from 'rxjs';
-import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 
 @Component({
   selector: 'app-rules',
