@@ -13,7 +13,7 @@ import { ConfirmationService, MenuItem, PrimeIcons } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { TooltipModule } from 'primeng/tooltip';
-import { delay, from, of } from 'rxjs';
+import { from } from 'rxjs';
 import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 import { LanguageService } from '../services/language.service';
 import { Theme, ThemeService } from '../services/theme.service';
@@ -111,7 +111,6 @@ export class TitleBarComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    console.log('resize', event);
     from(WindowIsMaximised()).subscribe(maximized => {
       this.isMaximized = maximized;
     });
