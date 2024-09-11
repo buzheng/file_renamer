@@ -24,6 +24,7 @@ import { Rule, RuleConfig, RuleEditor } from './rule';
 import { SeriesRuleComponent } from './series-rule/series-rule.component';
 import { TranslateModule, TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { forkJoin, map } from 'rxjs';
+import { MenuItemComponent } from '../components/menu-item/menu-item.component';
 
 @Component({
   selector: 'app-rules',
@@ -48,6 +49,7 @@ import { forkJoin, map } from 'rxjs';
     CdkDrag,
     CdkDragPlaceholder,
     TranslateModule,
+    MenuItemComponent,
   ],
   templateUrl: './rules.component.html',
   styleUrls: ['./rules.component.css'],
@@ -57,7 +59,7 @@ export class RulesComponent implements OnInit {
 
   ruleTypes: RuleType[] = ['Case', 'Insert', 'Replace', 'Remove', 'Series', 'NumberPadding', 'ID'];
 
-  ruleTypeMenus: MenuItem[] | undefined;
+  ruleTypeMenus!: MenuItem[];
 
   visible: boolean = false;
 
@@ -84,18 +86,10 @@ export class RulesComponent implements OnInit {
   }
 
   initRuleTypeMenus() {
-    forkJoin(
-      this.ruleTypes.map(type =>
-        this.translateService
-          .get(`rules.${type}.name`)
-          .pipe(map(translation => ({ type, translation }))),
-      ),
-    ).subscribe(translations => {
-      this.ruleTypeMenus = translations.map(({ type, translation }) => ({
-        label: translation,
-        command: () => this.openRuleEditor(type),
-      }));
-    });
+    this.ruleTypeMenus = this.ruleTypes.map(type => ({
+      label: type,
+      command: () => this.openRuleEditor(type),
+    }));
   }
 
   openRuleEditor(type: RuleType, config?: RuleConfig) {

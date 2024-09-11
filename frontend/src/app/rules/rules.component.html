@@ -17,7 +17,11 @@
         severity="contrast"
         (mouseenter)="ruleTypeMenu.toggle($event)"
       ></p-button>
-      <p-menu #ruleTypeMenu [model]="ruleTypeMenus" [popup]="true" />
+      <p-menu #ruleTypeMenu [model]="ruleTypeMenus" [popup]="true">
+        <ng-template pTemplate="item" let-item>
+          <app-menu-item [item]="item" [translateKey]="'rules.' + item.label + '.name'" />
+        </ng-template>
+      </p-menu>
     </div>
   </div>
   <div class="grow overflow-y-auto">
