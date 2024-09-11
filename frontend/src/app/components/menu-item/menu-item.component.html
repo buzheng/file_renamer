@@ -3,7 +3,7 @@
     @if (item.icon) {
       <span class="p-menuitem-icon {{ item.icon }}"></span>
     }
-    <span class="p-menuitem-text">{{ translateKeyPrefix + item.label | translate }}</span>
+    <span class="p-menuitem-text">{{ translateKey | translate }}</span>
     @if (checked) {
       <span class="ml-auto -mr-1 p-menuitem-icon pi pi-check"></span>
     }
