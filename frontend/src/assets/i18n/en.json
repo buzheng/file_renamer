@@ -30,6 +30,8 @@
   },
   "rules": {
     "title": "Rules",
+    "ok": "OK",
+    "cancel": "Cancel",
     "includeExtension": "Include Extension",
     "extension": {
       "only": "Extension Only",
@@ -74,9 +76,9 @@
       "caseSensitive": "Case Sensitive",
       "regex": "Regular Expression",
       "type": {
-        "All": "Replace All",
-        "First": "Replace First",
-        "Last": "Replace Last"
+        "All": "Replace all matches",
+        "First": "Replace the first match",
+        "Last": "Replace the last match"
       },
       "desc": {
         "All": {

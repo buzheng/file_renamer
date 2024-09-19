@@ -95,8 +95,17 @@
     </div>
 
     <ng-template pTemplate="footer">
-      <p-button label="Close" severity="secondary" (click)="visible = false" />
-      <p-button label="OK" icon="pi pi-check" (click)="saveRule()" styleClass="mr-0" />
+      <p-button
+        [label]="'rules.cancel' | translate"
+        severity="secondary"
+        (click)="visible = false"
+      />
+      <p-button
+        [label]="'rules.ok' | translate"
+        icon="pi pi-check"
+        (click)="saveRule()"
+        styleClass="mr-0"
+      />
     </ng-template>
   </p-dialog>
 }

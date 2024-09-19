@@ -30,6 +30,8 @@
   },
   "rules": {
     "title": "规则",
+    "ok": "确定",
+    "cancel": "取消",
     "includeExtension": "包括扩展名",
     "extension": {
       "only": "仅扩展名",
@@ -74,9 +76,9 @@
       "caseSensitive": "区分大小写",
       "regex": "正则表达式",
       "type": {
-        "All": "全部替换",
-        "First": "首次替换",
-        "Last": "最后一次替换"
+        "All": "替换全部匹配项",
+        "First": "替换第一个匹配项",
+        "Last": "替换最后一个匹配项"
       },
       "desc": {
         "All": {
