@@ -32,11 +32,11 @@
     "title": "规则",
     "ok": "确定",
     "cancel": "取消",
-    "includeExtension": "包括扩展名",
+    "includeExtension": "含扩展名",
     "extension": {
       "only": "仅扩展名",
-      "exclude": "排除扩展名",
-      "include": "包括扩展名"
+      "exclude": "不含扩展名",
+      "include": "含扩展名"
     },
     "Case": {
       "name": "大小写",
