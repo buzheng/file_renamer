@@ -290,6 +290,10 @@
         "UUID": "UUID",
         "NanoID": "NanoID"
       },
+      "tooltip": {
+        "counterLength": "The length to pad to",
+        "nanoidLength": "The length of the ID"
+      },
       "where": {
         "Filename": "Filename",
         "Start": "Start",

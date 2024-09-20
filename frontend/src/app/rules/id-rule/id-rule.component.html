@@ -16,7 +16,7 @@
               showButtons
               min="1"
               class="!w-full"
-              pTooltip="The length to pad to"
+              [pTooltip]="'rules.ID.tooltip.counterLength' | translate"
             />
           </div>
         } @else if (item === 'NanoID' && config.creator === 'NanoID') {
@@ -26,7 +26,7 @@
               showButtons
               min="0"
               class="!w-full"
-              pTooltip="The length of the ID"
+              [pTooltip]="'rules.ID.tooltip.nanoidLength' | translate"
             />
           </div>
         }

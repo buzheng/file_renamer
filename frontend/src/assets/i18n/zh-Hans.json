@@ -290,6 +290,10 @@
         "UUID": "UUID",
         "NanoID": "NanoID"
       },
+      "tooltip": {
+        "counterLength": "ID 填充长度",
+        "nanoidLength": "ID 长度"
+      },
       "where": {
         "Filename": "文件名",
         "Start": "开头",
