@@ -67,7 +67,13 @@
           >
             {{ file.newFilename }}
           </td>
-          <td>{{ 'files.results.' + file.result | translate }}</td>
+          <td
+            [class.text-blue-600]="isPending(file)"
+            [class.text-green-600]="isSuccess(file)"
+            [class.text-red-500]="isError(file)"
+          >
+            {{ 'files.results.' + file.result | translate }}
+          </td>
           @if (file.ruleResults.length > 1) {
             @for (result of file.ruleResults; track $index) {
               <td>
