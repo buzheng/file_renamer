@@ -26,7 +26,13 @@
       "DestDuplicates": "目标文件重复",
       "Error": "错误"
     },
-    "rule": "规则"
+    "rule": "规则",
+    "renameConfirm": {
+      "title": "请确认",
+      "message": "您确定要重命名这些文件吗?",
+      "ok": "确定",
+      "cancel": "取消"
+    }
   },
   "rules": {
     "title": "规则",

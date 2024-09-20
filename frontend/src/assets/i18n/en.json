@@ -26,7 +26,13 @@
       "DestDuplicates": "Destination Duplicates",
       "Error": "Error"
     },
-    "rule": "Rule"
+    "rule": "Rule",
+    "renameConfirm": {
+      "title": "Rename Confirm",
+      "message": "Are you sure you want to rename these files?",
+      "ok": "Yes",
+      "cancel": "No"
+    }
   },
   "rules": {
     "title": "Rules",

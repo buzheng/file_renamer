@@ -1,18 +1,21 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   GetFilesByPickingDirectory,
   GetFilesByPickingFiles,
   RenameFile,
 } from '@wailsjs/go/main/App';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TableModule } from 'primeng/table';
 import { Rule } from '../rules/rule';
-import { TranslateModule } from '@ngx-translate/core';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-files',
   standalone: true,
-  imports: [TableModule, ButtonModule, TranslateModule],
+  imports: [TableModule, ButtonModule, ConfirmDialogModule, TranslateModule],
+  providers: [ConfirmationService, MessageService],
   templateUrl: './files.component.html',
   styleUrl: './files.component.css',
 })
@@ -23,7 +26,10 @@ export class FilesComponent implements OnInit, OnChanges {
   @Input()
   rules: Rule[] = [];
 
-  constructor() {}
+  constructor(
+    private confirmationService: ConfirmationService,
+    private translateService: TranslateService,
+  ) {}
 
   ngOnInit() {}
 
@@ -53,10 +59,22 @@ export class FilesComponent implements OnInit, OnChanges {
   }
 
   async renameFiles() {
-    for (const file of this.files) {
-      const result = await RenameFile(file.file, file.newFile);
-      file.result = result as RenameResult;
-    }
+    this.confirmationService.confirm({
+      header: this.translateService.instant('files.renameConfirm.title'),
+      message: this.translateService.instant('files.renameConfirm.message'),
+      icon: 'pi pi-exclamation-triangle',
+      acceptIcon: 'none',
+      rejectIcon: 'none',
+      rejectButtonStyleClass: 'p-button-text',
+      acceptLabel: this.translateService.instant('files.renameConfirm.ok'),
+      rejectLabel: this.translateService.instant('files.renameConfirm.cancel'),
+      accept: async () => {
+        for (const file of this.files) {
+          const result = await RenameFile(file.file, file.newFile);
+          file.result = result as RenameResult;
+        }
+      },
+    });
   }
 
   isPending(file: RenamingFile) {
