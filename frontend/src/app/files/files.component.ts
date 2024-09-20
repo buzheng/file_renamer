@@ -59,6 +59,10 @@ export class FilesComponent implements OnInit, OnChanges {
   }
 
   async renameFiles() {
+    if (!this.canRename) {
+      return;
+    }
+
     this.confirmationService.confirm({
       header: this.translateService.instant('files.renameConfirm.title'),
       message: this.translateService.instant('files.renameConfirm.message'),
@@ -69,7 +73,7 @@ export class FilesComponent implements OnInit, OnChanges {
       acceptLabel: this.translateService.instant('files.renameConfirm.ok'),
       rejectLabel: this.translateService.instant('files.renameConfirm.cancel'),
       accept: async () => {
-        for (const file of this.files) {
+        for (const file of this.files.filter(file => file.result === 'Pending')) {
           const result = await RenameFile(file.file, file.newFile);
           file.result = result as RenameResult;
         }
